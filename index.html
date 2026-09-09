@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndustryToSchools | Metro Detroit WBL & CTE Partnerships</title>
+    <meta name="description" content="IndustryToSchools connects Metro Detroit school districts (Wayne, Oakland, Macomb ISDs, DPSCD) with local corporate partners for Metro Detroit work-based learning, CTE school partnerships, equipment donation Detroit schools, and student internships Detroit.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0A192F',
+                            light: '#1E3A8A',
+                        },
+                        amber: {
+                            DEFAULT: '#D97706',
+                            light: '#F59E0B',
+                        },
+                        slateBg: '#F8FAFC',
+                        slateText: '#64748B',
+                        success: '#10B981',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slateBg text-slateText font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- [SECTION 1: NAVIGATION BAR] -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between" aria-label="Main Navigation">
+            <a href="#" class="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg p-1">
+                <span class="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight">Industry<span class="text-amber-500">To</span>Schools</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block mb-3"></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#districts" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">For School Districts</a>
+                <a href="#partners" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">For Industry Partners</a>
+                <a href="#how-it-works" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">How It Works</a>
+                <a href="#impact" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Impact</a>
+            </div>
+
+            <!-- Dual CTAs -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#login" class="text-sm font-semibold text-white border border-slate-700 hover:border-slate-500 px-4 py-2.5 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-amber-500">School Login</a>
+                <a href="#post" class="text-sm font-semibold text-white bg-amber-600 hover:bg-amber-500 px-4 py-2.5 rounded-xl transition-all shadow-lg shadow-amber-600/20 focus:outline-none focus:ring-2 focus:ring-amber-500">Post an Opportunity</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy border-b border-slate-800 px-4 pt-2 pb-6 space-y-4">
+            <a href="#districts" class="block text-slate-300 hover:text-white py-2">For School Districts</a>
+            <a href="#partners" class="block text-slate-300 hover:text-white py-2">For Industry Partners</a>
+            <a href="#how-it-works" class="block text-slate-300 hover:text-white py-2">How It Works</a>
+            <a href="#impact" class="block text-slate-300 hover:text-white py-2">Impact</a>
+            <div class="flex flex-col gap-3 pt-4 border-t border-slate-800">
+                <a href="#login" class="text-center font-semibold text-white border border-slate-700 px-4 py-2.5 rounded-xl">School Login</a>
+                <a href="#post" class="text-center font-semibold text-white bg-amber-600 px-4 py-2.5 rounded-xl">Post an Opportunity</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="overflow-hidden">
+        <!-- [SECTION 2: HERO SECTION] -->
+        <section class="relative bg-navy text-white pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+            <!-- Background Glow Elements -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl mx-auto text-center fade-in-up">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-6">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Metro Detroit Work-Based Learning Portal
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-tight mb-6">
+                        Connecting Metro Detroit Classrooms to <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Local Industry Leaders.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed font-normal">
+                        Empowering Wayne, Oakland, and Macomb schools with real-world internships, tech equipment donations, and expert corporate mentorship.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                        <a href="#partners" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold transition-all shadow-xl shadow-amber-600/20 text-center focus:outline-none focus:ring-2 focus:ring-amber-500">Partner with a School</a>
+                        <a href="#districts" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 text-white font-semibold transition-all text-center focus:outline-none focus:ring-2 focus:ring-amber-500">Find Industry Support</a>
+                    </div>
+                </div>
+
+                <!-- Social Proof Ribbon -->
+                <div class="pt-10 border-t border-slate-800/80 text-center fade-in-up">
+                    <p class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-6">Supporting initiatives across regional education networks</p>
+                    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 opacity-75 grayscale hover:grayscale-0 transition-all">
+                        <span class="font-heading font-bold text-slate-300 tracking-wider text-sm sm:text-base">DPSCD</span>
+                        <span class="font-heading font-bold text-slate-300 tracking-wider text-sm sm:text-base">WAYNE RESA</span>
+                        <span class="font-heading font-bold text-slate-300 tracking-wider text-sm sm:text-base">OAKLAND SCHOOLS</span>
+                        <span class="font-heading font-bold text-slate-300 tracking-wider text-sm sm:text-base">MACOMB ISD</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [SECTION 3: STATS COUNTER BAR] -->
+        <section id="impact" class="bg-navy-light text-white py-12 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="p-4 fade-in-up">
+                        <div class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-amber-400 mb-1" data-target="45" data-suffix="+">0</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">School Districts Connected</div>
+                    </div>
+                    <div class="p-4 fade-in-up">
+                        <div class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-amber-400 mb-1" data-target="1200" data-prefix="" data-suffix="+">0</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Student Mentorship Hours</div>
+                    </div>
+                    <div class="p-4 fade-in-up">
+                        <div class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-amber-400 mb-1" data-target="150" data-prefix="$" data-suffix="K+">0</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Equipment Donated</div>
+                    </div>
+                    <div class="p-4 fade-in-up">
+                        <div class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-amber-400 mb-1" data-target="80" data-suffix="+">0</div>
+                        <div class="text-xs sm:text-sm text-slate-300 font-medium">Active Corporate Partners</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [SECTION 4: DUAL TARGET AUDIENCE TOGGLE / CARDS] -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mb-4">Tailored Solutions for Detroit’s Workforce Future</h2>
+                <p class="text-slateText text-base sm:text-lg">Streamlining collaboration between school administrative requirements and corporate social responsibility pipelines.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+                <!-- LEFT CARD (For School & CTE Coordinators) -->
+                <div id="districts" class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between transition-all hover:border-blue-200 fade-in-up">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 mb-6">For Educators</span>
+                        <h3 class="text-2xl font-heading font-bold text-navy mb-6">School & CTE Coordinators</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Automated WBL compliance tracking and hour logging.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Catalog of verified local guest speakers ready for classroom integration.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Request tech & machinery donations directly from industrial suppliers.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Streamline student background clearance and safety certification records.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#explore-school" class="w-full inline-block text-center bg-navy hover:bg-navy-light text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md focus:outline-none focus:ring-2 focus:ring-navy">Explore School Dashboard</a>
+                    </div>
+                </div>
+
+                <!-- RIGHT CARD (For Corporate & CSR Partners) -->
+                <div id="partners" class="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 flex flex-col justify-between transition-all hover:border-amber-200 fade-in-up">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 mb-6">For Businesses</span>
+                        <h3 class="text-2xl font-heading font-bold text-navy mb-6">Corporate & CSR Partners</h3>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Turnkey CSR & DEI community impact metrics and reporting.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Early talent acquisition pipeline tailored to regional high schools.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Tax-deductible equipment clearinghouse for surplus hardware & tools.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-5 h-5 rounded-full bg-success/10 text-success flex items-center justify-center font-bold text-xs mt-0.5">✓</span>
+                                <span class="text-slate-700 text-sm sm:text-base">Match employee volunteers by subject expertise and district preference.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="#become-partner" class="w-full inline-block text-center bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md shadow-amber-600/20 focus:outline-none focus:ring-2 focus:ring-amber-500">Become an Industry Partner</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [SECTION 5: HOW IT WORKS (3-STEP SEQUENCE)] -->
+        <section id="how-it-works" class="bg-slate-100/70 py-24 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
+                    <span class="text-amber-600 font-semibold text-sm tracking-wider uppercase">Streamlined Process</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mt-2 mb-4">How IndustryToSchools Works</h2>
+                    <p class="text-slateText text-base sm:text-lg">Connecting education and enterprise in three straightforward steps.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm relative fade-in-up">
+                        <div class="w-12 h-12 rounded-xl bg-navy text-white font-heading font-bold text-lg flex items-center justify-center mb-6 shadow-md">01</div>
+                        <h3 class="text-xl font-heading font-bold text-navy mb-3">Connect</h3>
+                        <p class="text-slateText text-sm sm:text-base leading-relaxed">District coordinators post classroom requirements, or corporate partners list available internships, guest speaker modules, and equipment donations.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm relative fade-in-up">
+                        <div class="w-12 h-12 rounded-xl bg-amber-600 text-white font-heading font-bold text-lg flex items-center justify-center mb-6 shadow-md shadow-amber-600/20">02</div>
+                        <h3 class="text-xl font-heading font-bold text-navy mb-3">Match & Verify</h3>
+                        <p class="text-slateText text-sm sm:text-base leading-relaxed">Automated matching pairs resources based on technical field, geographic location, and verified compliance or background clearance requirements.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm relative fade-in-up">
+                        <div class="w-12 h-12 rounded-xl bg-success text-white font-heading font-bold text-lg flex items-center justify-center mb-6 shadow-md shadow-success/20">03</div>
+                        <h3 class="text-xl font-heading font-bold text-navy mb-3">Impact</h3>
+                        <p class="text-slateText text-sm sm:text-base leading-relaxed">Students gain hands-on career experience, industrial equipment is deployed into active classrooms, and real-time reporting is generated for district stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [SECTION 6: INTERACTIVE OPPORTUNITY PREVIEW (FEATURED FEED)] -->
+        <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in-up">
+                <div>
+                    <span class="text-amber-600 font-semibold text-sm tracking-wider uppercase">Live Portal Feed</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-bold text-navy mt-2">Active Opportunities in Metro Detroit</h2>
+                </div>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2" role="group" aria-label="Opportunity filters">
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-navy text-white transition-all shadow-sm" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all" data-filter="Equipment">Equipment</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all" data-filter="Internship">Internship</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition-all" data-filter="Speaker">Speaker</button>
+                </div>
+            </div>
+
+            <!-- Feed Grid -->
+            <div id="opportunity-feed" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="opp-card bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between transition-all hover:shadow-md fade-in-up" data-category="Equipment">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700">Equipment Donation</span>
+                            <span class="text-xs font-medium text-slate-400">Wayne County</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy mb-2">Robotics Lab Equipment Donation</h3>
+                        <p class="text-slateText text-sm mb-6 leading-relaxed">Surplus automated arms, sensors, and structural components available for high school CTE robotics programs.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700">Partner: <span class="text-amber-600">Ford Motor Co.</span></span>
+                        <a href="#claim" class="text-xs font-semibold text-white bg-navy hover:bg-navy-light px-3.5 py-2 rounded-lg transition-all">Request Item</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="opp-card bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between transition-all hover:shadow-md fade-in-up" data-category="Internship">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700">Internship</span>
+                            <span class="text-xs font-medium text-slate-400">Detroit (DPSCD)</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy mb-2">IT Job Shadowing Day</h3>
+                        <p class="text-slateText text-sm mb-6 leading-relaxed">Immersive half-day shadowing software engineers, cloud architects, and cybersecurity specialists downtown.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700">Partner: <span class="text-amber-600">Rocket Companies</span></span>
+                        <a href="#claim" class="text-xs font-semibold text-white bg-navy hover:bg-navy-light px-3.5 py-2 rounded-lg transition-all">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="opp-card bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between transition-all hover:shadow-md fade-in-up" data-category="Speaker">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-success/10 text-success">Guest Speaker</span>
+                            <span class="text-xs font-medium text-slate-400">Oakland Schools</span>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold text-navy mb-2">Healthcare SME Guest Speaker</h3>
+                        <p class="text-slateText text-sm mb-6 leading-relaxed">Biomedical engineering and nursing professionals available for virtual or in-class Q&A sessions.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-700">Partner: <span class="text-amber-600">Corewell Health</span></span>
+                        <a href="#claim" class="text-xs font-semibold text-white bg-navy hover:bg-navy-light px-3.5 py-2 rounded-lg transition-all">Book Speaker</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [SECTION 7: FINAL CALL TO ACTION] -->
+        <section class="bg-navy text-white py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-amber-600/10 to-blue-600/10 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-in-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold tracking-tight mb-6">
+                    Ready to Build Detroit's Future Workforce Together?
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Whether you represent a school district in Wayne, Oakland, or Macomb county, or a local corporation looking to invest in early talent, your partnership changes trajectories.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#post" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold transition-all shadow-xl shadow-amber-600/20 text-center focus:outline-none focus:ring-2 focus:ring-amber-500">Post an Opportunity</a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 text-white font-semibold transition-all text-center focus:outline-none focus:ring-2 focus:ring-amber-500">Contact Partnership Team</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- [FOOTER] -->
+    <footer class="bg-navy border-t border-slate-800 text-slate-400 text-sm py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <span class="text-lg font-heading font-bold text-white tracking-tight">Industry<span class="text-amber-500">To</span>Schools</span>
+                    <span class="w-2 h-2 rounded-full bg-amber-500 inline-block mb-2"></span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm">
+                    <a href="#terms" class="hover:text-white transition-colors">Terms</a>
+                    <a href="#privacy" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#compliance" class="hover:text-white transition-colors">WBL Compliance</a>
+                    <a href="#map" class="hover:text-white transition-colors">Metro Detroit District Map</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="pt-8 text-center text-xs text-slate-500">
+                &copy; <span id="current-year"></span> IndustryToSchools.com. Empowering Metro Detroit Educational Communities. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Intersection Observer for Scroll Animations (Fade In Up)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger Counter Animation if applicable
+                    const counters = entry.target.querySelectorAll('[data-target]');
+                    counters.forEach(counter => {
+                        if (!counter.classList.contains('counted')) {
+                            counter.classList.add('counted');
+                            animateCounter(counter);
+                        }
+                    });
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter Animation Logic
+        function animateCounter(el) {
+            const target = +el.getAttribute('data-target');
+            const prefix = el.getAttribute('data-prefix') || '';
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 2000; // 2 seconds
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = target / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = prefix + target + suffix;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = prefix + Math.floor(current) + suffix;
+                }
+            }, stepTime);
+        }
+
+        // Filterable Feed Mock Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const oppCards = document.querySelectorAll('.opp-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-navy', 'text-white', 'shadow-sm');
+                    b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                });
+
+                // Add active styling to clicked button
+                btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+                btn.classList.add('bg-navy', 'text-white', 'shadow-sm');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                oppCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
